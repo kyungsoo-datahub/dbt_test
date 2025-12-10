@@ -1,0 +1,1113 @@
+[0m10:37:21.392396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c0fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091d9330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091d99c0>]}
+
+
+============================== 10:37:21.394669 | 5b5c514e-ff33-4b4a-bd94-4de25bb3fa02 ==============================
+[0m10:37:21.394669 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m10:37:21.394961 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'fail_fast': 'False', 'partial_parse': 'True', 'log_format': 'default', 'empty': 'None', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'profiles_dir': '/Users/kyungsl/.dbt', 'no_print': 'None', 'introspect': 'True', 'debug': 'False', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'use_colors': 'True', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'quiet': 'False', 'printer_width': '80', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'write_json': 'True'}
+[0m10:37:21.401929 [info ] [MainThread]: dbt version: 1.11.0-rc1
+[0m10:37:21.402144 [info ] [MainThread]: python version: 3.10.18
+[0m10:37:21.402299 [info ] [MainThread]: python path: /Users/kyungsl/workspace/dbt-projects/.venv/bin/python3
+[0m10:37:21.402454 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m10:37:21.536361 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:37:21.536632 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:37:21.536782 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:37:21.564433 [info ] [MainThread]: Using profiles dir at /Users/kyungsl/.dbt
+[0m10:37:21.564684 [info ] [MainThread]: Using profiles.yml file at /Users/kyungsl/.dbt/profiles.yml
+[0m10:37:21.564844 [info ] [MainThread]: Using dbt_project.yml file at /Users/kyungsl/workspace/dbt-projects/my_analytics_project/dbt_project.yml
+[0m10:37:21.565116 [info ] [MainThread]: adapter type: snowflake
+[0m10:37:21.565306 [info ] [MainThread]: adapter version: 1.10.3
+[0m10:37:21.612977 [info ] [MainThread]: Configuration:
+[0m10:37:21.613267 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:37:21.613421 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:37:21.613560 [info ] [MainThread]: Required dependencies:
+[0m10:37:21.613735 [debug] [MainThread]: Executing "git --help"
+[0m10:37:21.619939 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:37:21.620308 [debug] [MainThread]: STDERR: "b''"
+[0m10:37:21.620460 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:37:21.620633 [info ] [MainThread]: Connection:
+[0m10:37:21.620803 [info ] [MainThread]:   account: diukgvb-woa55424
+[0m10:37:21.620946 [info ] [MainThread]:   user: kyungsoo
+[0m10:37:21.621081 [info ] [MainThread]:   database: WAREHOUSE_COFFEE_COMPANY
+[0m10:37:21.621216 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m10:37:21.621351 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m10:37:21.621483 [info ] [MainThread]:   schema: DBT_DEV
+[0m10:37:21.621619 [info ] [MainThread]:   authenticator: None
+[0m10:37:21.621751 [info ] [MainThread]:   oauth_client_id: None
+[0m10:37:21.621881 [info ] [MainThread]:   query_tag: None
+[0m10:37:21.622012 [info ] [MainThread]:   client_session_keep_alive: False
+[0m10:37:21.622143 [info ] [MainThread]:   host: None
+[0m10:37:21.622274 [info ] [MainThread]:   port: None
+[0m10:37:21.622405 [info ] [MainThread]:   proxy_host: None
+[0m10:37:21.622533 [info ] [MainThread]:   proxy_port: None
+[0m10:37:21.622663 [info ] [MainThread]:   protocol: None
+[0m10:37:21.622793 [info ] [MainThread]:   connect_retries: 1
+[0m10:37:21.622921 [info ] [MainThread]:   connect_timeout: None
+[0m10:37:21.623049 [info ] [MainThread]:   retry_on_database_errors: False
+[0m10:37:21.623179 [info ] [MainThread]:   retry_all: False
+[0m10:37:21.623307 [info ] [MainThread]:   insecure_mode: False
+[0m10:37:21.623435 [info ] [MainThread]:   reuse_connections: True
+[0m10:37:21.623563 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m10:37:21.623698 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m10:37:21.624019 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:37:21.685898 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m10:37:21.706739 [debug] [MainThread]: Using snowflake connection "debug"
+[0m10:37:21.706921 [debug] [MainThread]: On debug: select 1 as id
+[0m10:37:21.707057 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:37:22.392509 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.685 seconds
+[0m10:37:22.393252 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:37:22.393469 [info ] [MainThread]: [32mAll checks passed![0m
+[0m10:37:22.395292 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 1.0375347, "process_in_blocks": "0", "process_kernel_time": 0.145793, "process_mem_max_rss": "148815872", "process_out_blocks": "0", "process_user_time": 0.89004}
+[0m10:37:22.395542 [debug] [MainThread]: Command `dbt debug` succeeded at 10:37:22.395490 after 1.04 seconds
+[0m10:37:22.395718 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:37:22.395854 [debug] [MainThread]: On debug: Close
+[0m10:37:22.611275 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c0fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ecb910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10960e920>]}
+[0m10:37:22.611740 [debug] [MainThread]: Flushing usage events
+[0m10:37:22.926286 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:42:41.710178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086ebee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cb9480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109cb9b10>]}
+
+
+============================== 10:42:41.712649 | e035cc65-cc21-48d3-b6d3-f9efe7f36e9f ==============================
+[0m10:42:41.712649 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m10:42:41.712946 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'debug': 'False', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'version_check': 'True', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'profiles_dir': '/Users/kyungsl/.dbt', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'write_json': 'True', 'quiet': 'False', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'target_path': 'None', 'empty': 'False'}
+[0m10:42:41.860171 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:42:41.860447 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:42:41.860602 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:42:41.943669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074b2260>]}
+[0m10:42:41.971641 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a774190>]}
+[0m10:42:41.972146 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:42:42.038714 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m10:42:42.039188 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:42:42.039366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c13b20>]}
+[0m10:42:42.556415 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m10:42:42.558831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10adb1210>]}
+[0m10:42:42.590519 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m10:42:42.591623 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m10:42:42.601178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c131f0>]}
+[0m10:42:42.601473 [info ] [MainThread]: Found 1 model, 505 macros
+[0m10:42:42.601651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a3e4a0>]}
+[0m10:42:42.602317 [info ] [MainThread]: 
+[0m10:42:42.602480 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:42:42.602618 [info ] [MainThread]: 
+[0m10:42:42.602854 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:42:42.603256 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m10:42:42.629396 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m10:42:42.629579 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m10:42:42.629714 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:42:43.161258 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.531 seconds
+[0m10:42:43.162461 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now create_WAREHOUSE_COFFEE_COMPANY_DBT_DEV)
+[0m10:42:43.162717 [debug] [ThreadPool]: Creating schema "database: "WAREHOUSE_COFFEE_COMPANY"
+schema: "DBT_DEV"
+"
+[0m10:42:43.165119 [debug] [ThreadPool]: Using snowflake connection "create_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"
+[0m10:42:43.165268 [debug] [ThreadPool]: On create_WAREHOUSE_COFFEE_COMPANY_DBT_DEV: create schema if not exists WAREHOUSE_COFFEE_COMPANY.DBT_DEV
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "create_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"} */
+[0m10:42:43.339348 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.174 seconds
+[0m10:42:43.340358 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_WAREHOUSE_COFFEE_COMPANY_DBT_DEV, now list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV)
+[0m10:42:43.346466 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"
+[0m10:42:43.346651 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV: show objects in WAREHOUSE_COFFEE_COMPANY.DBT_DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"} */;
+[0m10:42:43.670173 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.323 seconds
+[0m10:42:43.671504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a87f6d0>]}
+[0m10:42:43.673232 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:42:43.673521 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model DBT_DEV.sales_payment_analytics_dbt ....... [RUN]
+[0m10:42:43.673763 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV, now model.my_analytics_project.sales_payment_analytics_dbt)
+[0m10:42:43.673934 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:42:43.677745 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m10:42:43.678235 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:42:43.680091 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m10:42:43.681349 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m10:42:43.681597 [debug] [Thread-1 (]: On model.my_analytics_project.sales_payment_analytics_dbt: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.DBT_DEV.sales_payment_analytics_dbt
+        
+
+-- The content below is injected into the CREATE SEMANTIC VIEW statement
+TABLES (
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS 
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS 
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    ORDERS.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    TRANSACTIONS.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    TRANSACTIONS.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.sales_payment_analytics_dbt"} */
+[0m10:42:44.462600 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.781 seconds
+[0m10:42:44.466847 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e035cc65-cc21-48d3-b6d3-f9efe7f36e9f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bec2230>]}
+[0m10:42:44.467175 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model DBT_DEV.sales_payment_analytics_dbt .. [[32mSUCCESS 1[0m in 0.79s]
+[0m10:42:44.467458 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:42:44.468025 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:42:44.468198 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_payment_analytics_dbt' was left open.
+[0m10:42:44.468341 [debug] [MainThread]: On model.my_analytics_project.sales_payment_analytics_dbt: Close
+[0m10:42:44.591944 [info ] [MainThread]: 
+[0m10:42:44.592231 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 1.99 seconds (1.99s).
+[0m10:42:44.592556 [debug] [MainThread]: Command end result
+[0m10:42:44.603267 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m10:42:44.604108 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m10:42:44.607221 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m10:42:44.607371 [info ] [MainThread]: 
+[0m10:42:44.607568 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:42:44.607712 [info ] [MainThread]: 
+[0m10:42:44.607877 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:42:44.609684 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.9322727, "process_in_blocks": "0", "process_kernel_time": 0.162102, "process_mem_max_rss": "157253632", "process_out_blocks": "0", "process_user_time": 1.455142}
+[0m10:42:44.609906 [debug] [MainThread]: Command `dbt run` succeeded at 10:42:44.609869 after 2.93 seconds
+[0m10:42:44.610083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086ebee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a775cf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074b2260>]}
+[0m10:42:44.610248 [debug] [MainThread]: Flushing usage events
+[0m10:42:45.007607 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:44:43.688976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a45beb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba215d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba21c60>]}
+
+
+============================== 10:44:43.691452 | 10191037-9afc-442a-940e-d3025932077c ==============================
+[0m10:44:43.691452 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m10:44:43.691768 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/kyungsl/.dbt', 'empty': 'None', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'cache_selected_only': 'False', 'no_print': 'None', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'log_format': 'default', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'static_parser': 'True', 'write_json': 'True', 'target_path': 'None', 'printer_width': '80', 'quiet': 'False', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'fail_fast': 'False'}
+[0m10:44:43.842244 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:44:43.842503 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:44:43.842652 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:44:43.922378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c6e63b0>]}
+[0m10:44:43.949543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ba21840>]}
+[0m10:44:43.949992 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:44:44.013574 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m10:44:44.063580 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:44:44.063790 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:44:44.066612 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m10:44:44.078050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb024a0>]}
+[0m10:44:44.087171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10caa6aa0>]}
+[0m10:44:44.087422 [info ] [MainThread]: Found 1 model, 505 macros
+[0m10:44:44.087588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10caa5a80>]}
+[0m10:44:44.088222 [info ] [MainThread]: 
+[0m10:44:44.088393 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:44:44.088535 [info ] [MainThread]: 
+[0m10:44:44.088755 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:44:44.089154 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV'
+[0m10:44:44.118963 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"
+[0m10:44:44.119188 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV: show objects in WAREHOUSE_COFFEE_COMPANY.DBT_DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"} */;
+[0m10:44:44.119335 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:44:44.655013 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.536 seconds
+[0m10:44:44.656189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '10191037-9afc-442a-940e-d3025932077c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb90400>]}
+[0m10:44:44.657594 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:44:44.657825 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV, now model.my_analytics_project.sales_payment_analytics_dbt)
+[0m10:44:44.657997 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:44:44.661769 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m10:44:44.662098 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:44:44.662454 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m10:44:44.662819 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:44:44.663014 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_payment_analytics_dbt' was left open.
+[0m10:44:44.663178 [debug] [MainThread]: On model.my_analytics_project.sales_payment_analytics_dbt: Close
+[0m10:44:44.770121 [debug] [MainThread]: Command end result
+[0m10:44:44.799887 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m10:44:44.800880 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m10:44:44.804018 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m10:44:44.805327 [debug] [MainThread]: Acquiring new snowflake connection 'generate_catalog'
+[0m10:44:44.805486 [info ] [MainThread]: Building catalog
+[0m10:44:44.810331 [debug] [ThreadPool]: Acquiring new snowflake connection 'WAREHOUSE_COFFEE_COMPANY.information_schema'
+[0m10:44:44.816068 [debug] [ThreadPool]: Using snowflake connection "WAREHOUSE_COFFEE_COMPANY.information_schema"
+[0m10:44:44.816277 [debug] [ThreadPool]: On WAREHOUSE_COFFEE_COMPANY.information_schema: with tables as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+        case
+            when is_dynamic = 'YES' and table_type = 'BASE TABLE' THEN 'DYNAMIC TABLE'
+            else table_type
+        end as "table_type",
+        comment as "table_comment",
+
+        -- note: this is the _role_ that owns the table
+        table_owner as "table_owner",
+
+        'Clustering Key' as "stats:clustering_key:label",
+        clustering_key as "stats:clustering_key:value",
+        'The key used to cluster this table' as "stats:clustering_key:description",
+        (clustering_key is not null) as "stats:clustering_key:include",
+
+        'Row Count' as "stats:row_count:label",
+        row_count as "stats:row_count:value",
+        'An approximate count of rows in this table' as "stats:row_count:description",
+        (row_count is not null) as "stats:row_count:include",
+
+        'Approximate Size' as "stats:bytes:label",
+        bytes as "stats:bytes:value",
+        'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+        (bytes is not null) as "stats:bytes:include",
+
+        'Last Modified' as "stats:last_modified:label",
+        to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+        'The timestamp for last update/change' as "stats:last_modified:description",
+        (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+    from WAREHOUSE_COFFEE_COMPANY.INFORMATION_SCHEMA.tables
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_DEV' and upper("table_schema") = upper('DBT_DEV')
+
+                    and 
+    "table_name" ilike 'sales_payment_analytics_dbt' and upper("table_name") = upper('sales_payment_analytics_dbt')
+
+                )
+            )
+        ),
+        columns as (
+            select
+        table_catalog as "table_database",
+        table_schema as "table_schema",
+        table_name as "table_name",
+
+        column_name as "column_name",
+        ordinal_position as "column_index",
+        data_type as "column_type",
+        comment as "column_comment"
+    from WAREHOUSE_COFFEE_COMPANY.INFORMATION_SCHEMA.columns
+            where (
+                (
+                    
+    "table_schema" ilike 'DBT_DEV' and upper("table_schema") = upper('DBT_DEV')
+
+                    and 
+    "table_name" ilike 'sales_payment_analytics_dbt' and upper("table_name") = upper('sales_payment_analytics_dbt')
+
+                )
+            )
+        )
+        select *
+    from tables
+    join columns using ("table_database", "table_schema", "table_name")
+    order by "column_index"
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "WAREHOUSE_COFFEE_COMPANY.information_schema"} */
+[0m10:44:44.816467 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:44:46.699963 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.883 seconds
+[0m10:44:46.702809 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/catalog.json
+[0m10:44:46.712670 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m10:44:46.713397 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m10:44:46.713562 [info ] [MainThread]: Catalog written to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/catalog.json
+[0m10:44:46.715360 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 3.0604, "process_in_blocks": "0", "process_kernel_time": 0.160149, "process_mem_max_rss": "154927104", "process_out_blocks": "0", "process_user_time": 1.014024}
+[0m10:44:46.715603 [debug] [MainThread]: Command `dbt docs generate` succeeded at 10:44:46.715562 after 3.06 seconds
+[0m10:44:46.715765 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m10:44:46.715886 [debug] [MainThread]: Connection 'WAREHOUSE_COFFEE_COMPANY.information_schema' was left open.
+[0m10:44:46.716013 [debug] [MainThread]: On WAREHOUSE_COFFEE_COMPANY.information_schema: Close
+[0m10:44:46.831597 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a45beb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cba7940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10caadd20>]}
+[0m10:44:46.831901 [debug] [MainThread]: Flushing usage events
+[0m10:44:47.200397 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:01:47.602876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a16fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b737970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b736500>]}
+
+
+============================== 11:01:47.605363 | 2edc147e-4ae3-4581-ba6f-eb543051c254 ==============================
+[0m11:01:47.605363 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m11:01:47.605640 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/kyungsl/.dbt', 'static_parser': 'True', 'printer_width': '80', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'log_format': 'default', 'empty': 'False', 'quiet': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'debug': 'False', 'warn_error': 'None', 'invocation_command': 'dbt run', 'use_colors': 'True', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'write_json': 'True', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'no_print': 'None'}
+[0m11:01:47.752213 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:01:47.752477 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:01:47.752633 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:01:47.837634 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f96260>]}
+[0m11:01:47.867107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c1fcc10>]}
+[0m11:01:47.867860 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m11:01:47.930578 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m11:01:47.981640 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m11:01:47.981927 [debug] [MainThread]: Partial parsing: added file: my_analytics_project://models/_sources.yml
+[0m11:01:47.982116 [debug] [MainThread]: Partial parsing: updated file: my_analytics_project://models/sales_payment_analytics_dbt.sql
+[0m11:01:48.149174 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m11:01:48.154231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cbae0e0>]}
+[0m11:01:48.191139 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m11:01:48.192362 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m11:01:48.201635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c7c5a80>]}
+[0m11:01:48.201888 [info ] [MainThread]: Found 1 model, 2 sources, 505 macros
+[0m11:01:48.202058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c7c5690>]}
+[0m11:01:48.202759 [info ] [MainThread]: 
+[0m11:01:48.202933 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:01:48.203074 [info ] [MainThread]: 
+[0m11:01:48.203309 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:01:48.203698 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m11:01:48.255336 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m11:01:48.255572 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m11:01:48.255709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:01:48.905227 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.649 seconds
+[0m11:01:48.906398 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV)
+[0m11:01:48.912062 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"
+[0m11:01:48.912246 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV: show objects in WAREHOUSE_COFFEE_COMPANY.DBT_DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV"} */;
+[0m11:01:49.181652 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.269 seconds
+[0m11:01:49.182845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c738cd0>]}
+[0m11:01:49.185104 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m11:01:49.185432 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model DBT_DEV.SALES_PAYMENT_ANALYTICS ........... [RUN]
+[0m11:01:49.185697 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_DBT_DEV, now model.my_analytics_project.sales_payment_analytics_dbt)
+[0m11:01:49.185883 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_payment_analytics_dbt
+[0m11:01:49.190341 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m11:01:49.190772 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_payment_analytics_dbt
+[0m11:01:49.193219 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m11:01:49.194497 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m11:01:49.194738 [debug] [Thread-1 (]: On model.my_analytics_project.sales_payment_analytics_dbt: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.DBT_DEV.SALES_PAYMENT_ANALYTICS
+        
+
+TABLES (
+    -- USE SOURCE FUNCTION HERE
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    -- Important: The names inside RELATIONSHIPS refer to the *aliases* or *table names* -- defined in the TABLES block above. Since source() returns the full path (DB.SCHEMA.TABLE),
+    -- Snowflake's Semantic View usually expects you to refer to them by their base name 
+    -- or the alias you give them.
+    
+    -- In Semantic View syntax, if you don't provide an alias in the TABLES block, 
+    -- the implicit name is the table name (ORDERS, TRANSACTIONS).
+    
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    orders.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    transactions.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    transactions.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.sales_payment_analytics_dbt"} */
+[0m11:01:50.327859 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.133 seconds
+[0m11:01:50.333374 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2edc147e-4ae3-4581-ba6f-eb543051c254', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cbfd4b0>]}
+[0m11:01:50.333670 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model DBT_DEV.SALES_PAYMENT_ANALYTICS ...... [[32mSUCCESS 1[0m in 1.15s]
+[0m11:01:50.333943 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m11:01:50.334492 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:01:50.334657 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_payment_analytics_dbt' was left open.
+[0m11:01:50.334798 [debug] [MainThread]: On model.my_analytics_project.sales_payment_analytics_dbt: Close
+[0m11:01:50.477579 [info ] [MainThread]: 
+[0m11:01:50.477852 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 2.27 seconds (2.27s).
+[0m11:01:50.478168 [debug] [MainThread]: Command end result
+[0m11:01:50.488739 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m11:01:50.489466 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m11:01:50.492380 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m11:01:50.492539 [info ] [MainThread]: 
+[0m11:01:50.492726 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:01:50.492873 [info ] [MainThread]: 
+[0m11:01:50.493029 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:01:50.494687 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.9256773, "process_in_blocks": "0", "process_kernel_time": 0.160023, "process_mem_max_rss": "159907840", "process_out_blocks": "0", "process_user_time": 1.19216}
+[0m11:01:50.494874 [debug] [MainThread]: Command `dbt run` succeeded at 11:01:50.494839 after 2.93 seconds
+[0m11:01:50.495035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a16fee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cac7430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f96260>]}
+[0m11:01:50.495193 [debug] [MainThread]: Flushing usage events
+[0m11:01:50.833673 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:58:56.275157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f5fe20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095292a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109529930>]}
+
+
+============================== 12:58:56.277644 | 21bb899a-2b16-4b0d-b7b5-23a2d818c7c2 ==============================
+[0m12:58:56.277644 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m12:58:56.277928 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt init', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'debug': 'False', 'version_check': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'use_colors': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'profiles_dir': '/Users/kyungsl/.dbt', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'target_path': 'None', 'log_format': 'default', 'empty': 'None'}
+[0m12:58:56.287753 [info ] [MainThread]: Setting up your profile.
+[0m12:59:02.944648 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:59:02.944920 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:59:02.945075 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:59:50.795431 [info ] [MainThread]: Profile my_analytics_project written to /Users/kyungsl/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:59:50.802477 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 54.56264, "process_in_blocks": "0", "process_kernel_time": 0.125831, "process_mem_max_rss": "125059072", "process_out_blocks": "0", "process_user_time": 0.680861}
+[0m12:59:50.803138 [debug] [MainThread]: Command `dbt init` succeeded at 12:59:50.803072 after 54.56 seconds
+[0m12:59:50.803379 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f5fe20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1095288b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092b23e0>]}
+[0m12:59:50.803613 [debug] [MainThread]: Flushing usage events
+[0m12:59:51.165227 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:59:55.901276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084cbf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a994b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109a99b40>]}
+
+
+============================== 12:59:55.903514 | a403151c-bafd-4624-9aa7-194bf7a1e4a8 ==============================
+[0m12:59:55.903514 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m12:59:55.903789 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'use_experimental_parser': 'False', 'target_path': 'None', 'warn_error': 'None', 'partial_parse': 'True', 'version_check': 'True', 'invocation_command': 'dbt run', 'use_colors': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'log_format': 'default', 'fail_fast': 'False', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/kyungsl/.dbt', 'log_cache_events': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'no_print': 'None', 'introspect': 'True', 'cache_selected_only': 'False', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs'}
+[0m12:59:56.041498 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m12:59:56.041779 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m12:59:56.041937 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m12:59:56.127162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c316f0>]}
+[0m12:59:56.154730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109399d50>]}
+[0m12:59:56.155211 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m12:59:56.222137 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m12:59:56.267619 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:59:56.267928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109366b30>]}
+[0m12:59:56.815240 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m12:59:56.819943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ac53130>]}
+[0m12:59:56.855974 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m12:59:56.857078 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m12:59:56.866440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10adb9e70>]}
+[0m12:59:56.866700 [info ] [MainThread]: Found 1 model, 2 sources, 505 macros
+[0m12:59:56.866871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10adb8520>]}
+[0m12:59:56.867555 [info ] [MainThread]: 
+[0m12:59:56.867721 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:59:56.867861 [info ] [MainThread]: 
+[0m12:59:56.868092 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m12:59:56.868485 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m12:59:56.904528 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m12:59:56.904747 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m12:59:56.904886 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:59:57.684551 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.780 seconds
+[0m12:59:57.686143 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now list_WAREHOUSE_COFFEE_COMPANY_PUBLIC)
+[0m12:59:57.692028 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"
+[0m12:59:57.692194 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_PUBLIC: show objects in WAREHOUSE_COFFEE_COMPANY.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"} */;
+[0m12:59:57.912053 [debug] [ThreadPool]: SQL status: SUCCESS 35 in 0.220 seconds
+[0m12:59:57.915434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a639ae0>]}
+[0m12:59:57.917667 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m12:59:57.917902 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model PUBLIC.SALES_PAYMENT_ANALYTICS ............ [RUN]
+[0m12:59:57.918110 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_PUBLIC, now model.my_analytics_project.sales_payment_analytics_dbt)
+[0m12:59:57.918278 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_payment_analytics_dbt
+[0m12:59:57.922065 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m12:59:57.922558 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_payment_analytics_dbt
+[0m12:59:57.924410 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m12:59:57.925570 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m12:59:57.925802 [debug] [Thread-1 (]: On model.my_analytics_project.sales_payment_analytics_dbt: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.PUBLIC.SALES_PAYMENT_ANALYTICS
+        
+
+TABLES (
+    -- USE SOURCE FUNCTION HERE
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    -- Important: The names inside RELATIONSHIPS refer to the *aliases* or *table names* -- defined in the TABLES block above. Since source() returns the full path (DB.SCHEMA.TABLE),
+    -- Snowflake's Semantic View usually expects you to refer to them by their base name 
+    -- or the alias you give them.
+    
+    -- In Semantic View syntax, if you don't provide an alias in the TABLES block, 
+    -- the implicit name is the table name (ORDERS, TRANSACTIONS).
+    
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    orders.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    transactions.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    transactions.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.sales_payment_analytics_dbt"} */
+[0m12:59:58.719250 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.793 seconds
+[0m12:59:58.723353 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a403151c-bafd-4624-9aa7-194bf7a1e4a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bf029b0>]}
+[0m12:59:58.723701 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model PUBLIC.SALES_PAYMENT_ANALYTICS ....... [[32mSUCCESS 1[0m in 0.80s]
+[0m12:59:58.723985 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m12:59:58.724536 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:59:58.724709 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_payment_analytics_dbt' was left open.
+[0m12:59:58.724858 [debug] [MainThread]: On model.my_analytics_project.sales_payment_analytics_dbt: Close
+[0m12:59:58.831939 [info ] [MainThread]: 
+[0m12:59:58.832205 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 1.96 seconds (1.96s).
+[0m12:59:58.832524 [debug] [MainThread]: Command end result
+[0m12:59:58.842918 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m12:59:58.843595 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m12:59:58.846828 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m12:59:58.846990 [info ] [MainThread]: 
+[0m12:59:58.847183 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:59:58.847330 [info ] [MainThread]: 
+[0m12:59:58.847486 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m12:59:58.848672 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.980602, "process_in_blocks": "0", "process_kernel_time": 0.156686, "process_mem_max_rss": "161021952", "process_out_blocks": "0", "process_user_time": 1.540107}
+[0m12:59:58.848869 [debug] [MainThread]: Command `dbt run` succeeded at 12:59:58.848827 after 2.98 seconds
+[0m12:59:58.849053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084cbf40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109399d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c316f0>]}
+[0m12:59:58.849235 [debug] [MainThread]: Flushing usage events
+[0m12:59:59.133556 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:26:46.936163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bdefeb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3bd420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3bdab0>]}
+
+
+============================== 13:26:46.938780 | 740c1037-5e72-447d-af18-150f96e843cd ==============================
+[0m13:26:46.938780 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m13:26:46.939096 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'profiles_dir': '/Users/kyungsl/.dbt', 'log_cache_events': 'False', 'empty': 'False', 'static_parser': 'True', 'version_check': 'True', 'printer_width': '80', 'target_path': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'write_json': 'True', 'no_print': 'None', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'quiet': 'False', 'invocation_command': 'dbt run', 'use_colors': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'partial_parse': 'True'}
+[0m13:26:47.146235 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:26:47.146520 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:26:47.146796 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:26:47.239593 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abb6230>]}
+[0m13:26:47.268996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de43f40>]}
+[0m13:26:47.269479 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m13:26:47.338369 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m13:26:47.404002 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m13:26:47.404323 [debug] [MainThread]: Partial parsing: added file: my_analytics_project://models/warehouse_sales_payment_analytics_dbt.sql
+[0m13:26:47.404490 [debug] [MainThread]: Partial parsing: deleted file: my_analytics_project://models/sales_payment_analytics_dbt.sql
+[0m13:26:47.522829 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m13:26:47.530185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e63c130>]}
+[0m13:26:47.569149 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:26:47.570261 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:26:47.580813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6684c0>]}
+[0m13:26:47.581127 [info ] [MainThread]: Found 1 model, 2 sources, 505 macros
+[0m13:26:47.581304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e5c6b30>]}
+[0m13:26:47.582068 [info ] [MainThread]: 
+[0m13:26:47.582250 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:26:47.582392 [info ] [MainThread]: 
+[0m13:26:47.582636 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:26:47.583037 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m13:26:47.610587 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m13:26:47.610831 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m13:26:47.610986 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:26:48.134886 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.524 seconds
+[0m13:26:48.135948 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now list_WAREHOUSE_COFFEE_COMPANY_PUBLIC)
+[0m13:26:48.141650 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"
+[0m13:26:48.141844 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_PUBLIC: show objects in WAREHOUSE_COFFEE_COMPANY.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"} */;
+[0m13:26:48.370970 [debug] [ThreadPool]: SQL status: SUCCESS 36 in 0.229 seconds
+[0m13:26:48.374705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e472fe0>]}
+[0m13:26:48.377826 [debug] [Thread-1 (]: Began running node model.my_analytics_project.warehouse_sales_payment_analytics_dbt
+[0m13:26:48.378058 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model PUBLIC.WAREHOUSE_SALES_PAYMENT_ANALYTICS .. [RUN]
+[0m13:26:48.378269 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_PUBLIC, now model.my_analytics_project.warehouse_sales_payment_analytics_dbt)
+[0m13:26:48.378427 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.warehouse_sales_payment_analytics_dbt
+[0m13:26:48.408019 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.warehouse_sales_payment_analytics_dbt"
+[0m13:26:48.408492 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.warehouse_sales_payment_analytics_dbt
+[0m13:26:48.410343 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.warehouse_sales_payment_analytics_dbt"
+[0m13:26:48.411667 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.warehouse_sales_payment_analytics_dbt"
+[0m13:26:48.411926 [debug] [Thread-1 (]: On model.my_analytics_project.warehouse_sales_payment_analytics_dbt: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.PUBLIC.WAREHOUSE_SALES_PAYMENT_ANALYTICS
+        
+
+TABLES (
+    -- USE SOURCE FUNCTION HERE
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    -- Important: The names inside RELATIONSHIPS refer to the *aliases* or *table names* -- defined in the TABLES block above. Since source() returns the full path (DB.SCHEMA.TABLE),
+    -- Snowflake's Semantic View usually expects you to refer to them by their base name 
+    -- or the alias you give them.
+    
+    -- In Semantic View syntax, if you don't provide an alias in the TABLES block, 
+    -- the implicit name is the table name (ORDERS, TRANSACTIONS).
+    
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    orders.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    transactions.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    transactions.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.warehouse_sales_payment_analytics_dbt"} */
+[0m13:26:49.703865 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.292 seconds
+[0m13:26:49.709153 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '740c1037-5e72-447d-af18-150f96e843cd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f70c5e0>]}
+[0m13:26:49.709506 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model PUBLIC.WAREHOUSE_SALES_PAYMENT_ANALYTICS  [[32mSUCCESS 1[0m in 1.33s]
+[0m13:26:49.709803 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.warehouse_sales_payment_analytics_dbt
+[0m13:26:49.710392 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:26:49.710565 [debug] [MainThread]: Connection 'model.my_analytics_project.warehouse_sales_payment_analytics_dbt' was left open.
+[0m13:26:49.710724 [debug] [MainThread]: On model.my_analytics_project.warehouse_sales_payment_analytics_dbt: Close
+[0m13:26:49.813896 [info ] [MainThread]: 
+[0m13:26:49.814168 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 2.23 seconds (2.23s).
+[0m13:26:49.814493 [debug] [MainThread]: Command end result
+[0m13:26:49.824982 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:26:49.825708 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:26:49.828652 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m13:26:49.828802 [info ] [MainThread]: 
+[0m13:26:49.828987 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:26:49.829131 [info ] [MainThread]: 
+[0m13:26:49.829285 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m13:26:49.830775 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.9334943, "process_in_blocks": "0", "process_kernel_time": 0.188192, "process_mem_max_rss": "159006720", "process_out_blocks": "0", "process_user_time": 1.225834}
+[0m13:26:49.830959 [debug] [MainThread]: Command `dbt run` succeeded at 13:26:49.830925 after 2.93 seconds
+[0m13:26:49.831125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bdefeb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4e1e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e65b430>]}
+[0m13:26:49.831284 [debug] [MainThread]: Flushing usage events
+[0m13:26:50.189014 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:33:36.030437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a193f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b75b9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b75a4d0>]}
+
+
+============================== 13:33:36.032910 | dbd92ae1-ac0c-48ce-8435-4dd1264c6efd ==============================
+[0m13:33:36.032910 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m13:33:36.033202 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'use_experimental_parser': 'False', 'empty': 'False', 'introspect': 'True', 'static_parser': 'True', 'debug': 'False', 'fail_fast': 'False', 'quiet': 'False', 'profiles_dir': '/Users/kyungsl/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'printer_width': '80', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'write_json': 'True', 'target_path': 'None', 'cache_selected_only': 'False', 'no_print': 'None', 'log_format': 'default', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True'}
+[0m13:33:36.180911 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:33:36.181171 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:33:36.181326 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:33:36.261831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8fa560>]}
+[0m13:33:36.291041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4e4ee0>]}
+[0m13:33:36.291859 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m13:33:36.359260 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m13:33:36.422270 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m13:33:36.422586 [debug] [MainThread]: Partial parsing: added file: my_analytics_project://models/sales_payment_analytics_dbt.sql
+[0m13:33:36.422747 [debug] [MainThread]: Partial parsing: deleted file: my_analytics_project://models/warehouse_sales_payment_analytics_dbt.sql
+[0m13:33:36.536387 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m13:33:36.543604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9e40a0>]}
+[0m13:33:36.580859 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:33:36.582064 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:33:36.590893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca104c0>]}
+[0m13:33:36.591156 [info ] [MainThread]: Found 1 model, 2 sources, 505 macros
+[0m13:33:36.591331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ca10e80>]}
+[0m13:33:36.592095 [info ] [MainThread]: 
+[0m13:33:36.592280 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:33:36.592427 [info ] [MainThread]: 
+[0m13:33:36.592676 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:33:36.593093 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m13:33:36.618835 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m13:33:36.619053 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m13:33:36.619196 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:33:37.241416 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.622 seconds
+[0m13:33:37.242743 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now list_WAREHOUSE_COFFEE_COMPANY_PUBLIC)
+[0m13:33:37.248246 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"
+[0m13:33:37.248421 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_PUBLIC: show objects in WAREHOUSE_COFFEE_COMPANY.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"} */;
+[0m13:33:37.663745 [debug] [ThreadPool]: SQL status: SUCCESS 36 in 0.415 seconds
+[0m13:33:37.667516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9c60e0>]}
+[0m13:33:37.670041 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m13:33:37.670295 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model PUBLIC.SALES_ANALYTICS .................... [RUN]
+[0m13:33:37.670526 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_PUBLIC, now model.my_analytics_project.sales_payment_analytics_dbt)
+[0m13:33:37.670690 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_payment_analytics_dbt
+[0m13:33:37.697559 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m13:33:37.698030 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_payment_analytics_dbt
+[0m13:33:37.699779 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m13:33:37.700942 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.sales_payment_analytics_dbt"
+[0m13:33:37.701205 [debug] [Thread-1 (]: On model.my_analytics_project.sales_payment_analytics_dbt: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.PUBLIC.SALES_ANALYTICS
+        
+
+TABLES (
+    -- USE SOURCE FUNCTION HERE
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    -- Important: The names inside RELATIONSHIPS refer to the *aliases* or *table names* -- defined in the TABLES block above. Since source() returns the full path (DB.SCHEMA.TABLE),
+    -- Snowflake's Semantic View usually expects you to refer to them by their base name 
+    -- or the alias you give them.
+    
+    -- In Semantic View syntax, if you don't provide an alias in the TABLES block, 
+    -- the implicit name is the table name (ORDERS, TRANSACTIONS).
+    
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    orders.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    transactions.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    transactions.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.sales_payment_analytics_dbt"} */
+[0m13:33:38.481716 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.780 seconds
+[0m13:33:38.485970 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dbd92ae1-ac0c-48ce-8435-4dd1264c6efd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10daacc70>]}
+[0m13:33:38.486318 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model PUBLIC.SALES_ANALYTICS ............... [[32mSUCCESS 1[0m in 0.81s]
+[0m13:33:38.486619 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_payment_analytics_dbt
+[0m13:33:38.487182 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:33:38.487354 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_payment_analytics_dbt' was left open.
+[0m13:33:38.487513 [debug] [MainThread]: On model.my_analytics_project.sales_payment_analytics_dbt: Close
+[0m13:33:38.597929 [info ] [MainThread]: 
+[0m13:33:38.598198 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 2.01 seconds (2.01s).
+[0m13:33:38.598530 [debug] [MainThread]: Command end result
+[0m13:33:38.609045 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:33:38.609814 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:33:38.612702 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m13:33:38.612860 [info ] [MainThread]: 
+[0m13:33:38.613053 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:33:38.613201 [info ] [MainThread]: 
+[0m13:33:38.613357 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m13:33:38.615137 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.6191068, "process_in_blocks": "0", "process_kernel_time": 0.162834, "process_mem_max_rss": "159105024", "process_out_blocks": "0", "process_user_time": 1.137956}
+[0m13:33:38.615336 [debug] [MainThread]: Command `dbt run` succeeded at 13:33:38.615296 after 2.62 seconds
+[0m13:33:38.615523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a193f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8f9f00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c9ff490>]}
+[0m13:33:38.615706 [debug] [MainThread]: Flushing usage events
+[0m13:33:38.948431 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:52:52.016875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb07f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0cf9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d0ce4d0>]}
+
+
+============================== 13:52:52.019199 | 7f0e273a-5c49-4cd7-afce-2c4e5f24830c ==============================
+[0m13:52:52.019199 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m13:52:52.019478 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs', 'no_print': 'None', 'quiet': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'empty': 'False', 'version_check': 'True', 'log_format': 'default', 'partial_parse': 'True', 'target_path': 'None', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'printer_width': '80', 'write_json': 'True', 'profiles_dir': '/Users/kyungsl/.dbt'}
+[0m13:52:52.179965 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:52:52.180243 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:52:52.180399 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:52:52.268530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c26e560>]}
+[0m13:52:52.297168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ce58ee0>]}
+[0m13:52:52.297836 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m13:52:52.361280 [debug] [MainThread]: checksum: bdedcbc4566463a53095072aa091a5f5b73db413e58224228390aa7e9748abcc, vars: {}, profile: , target: , version: 1.11.0rc1
+[0m13:52:52.424533 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m13:52:52.424833 [debug] [MainThread]: Partial parsing: added file: my_analytics_project://models/sales_analytics.sql
+[0m13:52:52.424978 [debug] [MainThread]: Partial parsing: deleted file: my_analytics_project://models/sales_payment_analytics_dbt.sql
+[0m13:52:52.545439 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_analytics_project.example
+[0m13:52:52.552912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3540a0>]}
+[0m13:52:52.592009 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:52:52.593231 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:52:52.603214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e37c4c0>]}
+[0m13:52:52.603493 [info ] [MainThread]: Found 1 model, 2 sources, 505 macros
+[0m13:52:52.603678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e37ce80>]}
+[0m13:52:52.604389 [info ] [MainThread]: 
+[0m13:52:52.604564 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:52:52.604709 [info ] [MainThread]: 
+[0m13:52:52.604952 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:52:52.605347 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_WAREHOUSE_COFFEE_COMPANY'
+[0m13:52:52.632612 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY"
+[0m13:52:52.632831 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY: show terse schemas in database WAREHOUSE_COFFEE_COMPANY
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY"} */
+[0m13:52:52.632974 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:52:53.142052 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.509 seconds
+[0m13:52:53.143775 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY, now list_WAREHOUSE_COFFEE_COMPANY_PUBLIC)
+[0m13:52:53.150860 [debug] [ThreadPool]: Using snowflake connection "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"
+[0m13:52:53.151166 [debug] [ThreadPool]: On list_WAREHOUSE_COFFEE_COMPANY_PUBLIC: show objects in WAREHOUSE_COFFEE_COMPANY.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "connection_name": "list_WAREHOUSE_COFFEE_COMPANY_PUBLIC"} */;
+[0m13:52:54.354823 [debug] [ThreadPool]: SQL status: SUCCESS 37 in 1.203 seconds
+[0m13:52:54.359293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e37ec50>]}
+[0m13:52:54.361452 [debug] [Thread-1 (]: Began running node model.my_analytics_project.sales_analytics
+[0m13:52:54.361728 [info ] [Thread-1 (]: 1 of 1 START sql semantic_view model PUBLIC.SALES_ANALYTICS .................... [RUN]
+[0m13:52:54.361977 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_WAREHOUSE_COFFEE_COMPANY_PUBLIC, now model.my_analytics_project.sales_analytics)
+[0m13:52:54.362161 [debug] [Thread-1 (]: Began compiling node model.my_analytics_project.sales_analytics
+[0m13:52:54.391183 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_analytics_project.sales_analytics"
+[0m13:52:54.391692 [debug] [Thread-1 (]: Began executing node model.my_analytics_project.sales_analytics
+[0m13:52:54.393497 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_analytics_project.sales_analytics"
+[0m13:52:54.394714 [debug] [Thread-1 (]: Using snowflake connection "model.my_analytics_project.sales_analytics"
+[0m13:52:54.394952 [debug] [Thread-1 (]: On model.my_analytics_project.sales_analytics: CREATE OR REPLACE SEMANTIC VIEW WAREHOUSE_COFFEE_COMPANY.PUBLIC.SALES_ANALYTICS
+        
+
+TABLES (
+    -- USE SOURCE FUNCTION HERE
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.ORDERS
+        PRIMARY KEY (ORDER_ID, CUSTOMER_ID) 
+        WITH SYNONYMS=('Sales','Purchase_Orders','Customer_Orders'),
+        
+    WAREHOUSE_COFFEE_COMPANY.PUBLIC.TRANSACTIONS
+        PRIMARY KEY (TRANSACTION_ID) 
+        UNIQUE (ORDER_ID, TRANSACTION_ID) 
+        WITH SYNONYMS=('Payments','Financial_Transactions') 
+        COMMENT='Financial transaction records including payment methods and transaction types for all customer orders'
+)
+
+RELATIONSHIPS (
+    -- Important: The names inside RELATIONSHIPS refer to the *aliases* or *table names* -- defined in the TABLES block above. Since source() returns the full path (DB.SCHEMA.TABLE),
+    -- Snowflake's Semantic View usually expects you to refer to them by their base name 
+    -- or the alias you give them.
+    
+    -- In Semantic View syntax, if you don't provide an alias in the TABLES block, 
+    -- the implicit name is the table name (ORDERS, TRANSACTIONS).
+    
+    ORDER_PAYMENT_LINK AS ORDERS(ORDER_ID, STORE_ID) 
+        REFERENCES TRANSACTIONS(ORDER_ID, TRANSACTION_ID)
+)
+
+FACTS (
+    orders.ORDER_TOTAL AS ORDER_TOTAL 
+        COMMENT='Total order amount in USD - used for revenue calculations and financial reporting',
+    transactions.ORDER_ID AS ORDER_ID 
+        COMMENT='Transaction count metric - used to track number of payment attempts per order and identify split payments',
+    transactions.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT 
+        COMMENT='Individual payment transaction amount - supports multi-payment orders and partial refunds'
+)
+
+DIMENSIONS (
+    ORDERS.CUSTOMER_ID AS CUSTOMER_ID 
+        COMMENT='Unique customer identifier - links to customer master data and loyalty program',
+    ORDERS.ORDER_ID AS ORDER_ID 
+        COMMENT='Primary order identifier - used for order lookup, tracking, and customer service inquiries',
+    ORDERS.ORDER_TYPE AS ORDER_TYPE 
+        COMMENT='Order channel classification (in-store, mobile, web, drive-thru) - aligns with Order Channel Types business glossary term',
+    ORDERS.STORE_ID AS STORE_ID 
+        COMMENT='Store location identifier - connects to store master data for regional analysis and performance metrics',
+    TRANSACTIONS.PAYMENT_METHOD AS PAYMENT_METHOD 
+        COMMENT='Payment type (credit card, debit card, mobile wallet, cash, gift card) - used for payment mix analysis and reconciliation',
+    TRANSACTIONS.TRANSACTION_DATE AS TRANSACTION_DATE 
+        COMMENT='Payment processing timestamp - enables time-series analysis of payment patterns and reconciliation reporting',
+    TRANSACTIONS.TRANSACTION_ID AS TRANSACTION_ID 
+        COMMENT='Unique payment transaction identifier - used for payment gateway reconciliation and dispute resolution',
+    TRANSACTIONS.TRANSACTION_TYPE AS TRANSACTION_TYPE 
+        COMMENT='Transaction classification (sale, refund, adjustment, gift_card_purchase, gift_card_redemption) - excludes gift card transactions from revenue calculations per finance team guidelines'
+)
+
+METRICS (
+    ORDERS.GROSS_REVENUE AS SUM(ORDER_TOTAL) 
+        COMMENT='Total gross revenue from all orders - primary top-line metric for financial reporting and executive dashboards',
+    TRANSACTIONS.NET_PAYMENT_AMOUNT AS SUM(TRANSACTION_AMOUNT) 
+        COMMENT='Total payment amount processed - includes refunds and adjustments for reconciliation with payment gateway',
+    TOTAL_ORDER_REVENUE AS ORDERS.GROSS_REVENUE + TRANSACTIONS.NET_PAYMENT_AMOUNT 
+        COMMENT='Combined revenue metric - consolidates order value and actual payments received for comprehensive revenue analysis'
+)
+
+COMMENT='Unified sales and payment analytics semantic view - provides integrated view of order and transaction data for revenue reporting, payment reconciliation, and business intelligence'
+
+WITH EXTENSION (
+    CA='{"tables":[{"name":"ORDERS","dimensions":[{"name":"CUSTOMER_ID"},{"name":"ORDER_ID"},{"name":"ORDER_TYPE"},{"name":"STORE_ID"}],"facts":[{"name":"ORDER_TOTAL"}],"metrics":[{"name":"GROSS_REVENUE"}]},{"name":"TRANSACTIONS","dimensions":[{"name":"PAYMENT_METHOD"},{"name":"TRANSACTION_ID"},{"name":"TRANSACTION_TYPE"}],"facts":[{"name":"ORDER_ID"},{"name":"TRANSACTION_AMOUNT"}],"metrics":[{"name":"NET_PAYMENT_AMOUNT"}],"time_dimensions":[{"name":"TRANSACTION_DATE"}]}],"relationships":[{"name":"ORDER_PAYMENT_LINK"}]}'
+)
+/* {"app": "dbt", "dbt_version": "1.11.0rc1", "profile_name": "my_analytics_project", "target_name": "dev", "node_id": "model.my_analytics_project.sales_analytics"} */
+[0m13:52:55.046636 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.651 seconds
+[0m13:52:55.051953 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7f0e273a-5c49-4cd7-afce-2c4e5f24830c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8a69b0>]}
+[0m13:52:55.052311 [info ] [Thread-1 (]: 1 of 1 OK created sql semantic_view model PUBLIC.SALES_ANALYTICS ............... [[32mSUCCESS 1[0m in 0.69s]
+[0m13:52:55.052597 [debug] [Thread-1 (]: Finished running node model.my_analytics_project.sales_analytics
+[0m13:52:55.053170 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:52:55.053356 [debug] [MainThread]: Connection 'model.my_analytics_project.sales_analytics' was left open.
+[0m13:52:55.053508 [debug] [MainThread]: On model.my_analytics_project.sales_analytics: Close
+[0m13:52:55.205462 [info ] [MainThread]: 
+[0m13:52:55.205731 [info ] [MainThread]: Finished running 1 semantic view model in 0 hours 0 minutes and 2.60 seconds (2.60s).
+[0m13:52:55.206045 [debug] [MainThread]: Command end result
+[0m13:52:55.216432 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/manifest.json
+[0m13:52:55.217177 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/semantic_manifest.json
+[0m13:52:55.220104 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/kyungsl/workspace/dbt-projects/my_analytics_project/target/run_results.json
+[0m13:52:55.220270 [info ] [MainThread]: 
+[0m13:52:55.220466 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:52:55.220620 [info ] [MainThread]: 
+[0m13:52:55.220783 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m13:52:55.222334 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.2391968, "process_in_blocks": "0", "process_kernel_time": 0.172655, "process_mem_max_rss": "159940608", "process_out_blocks": "0", "process_user_time": 1.161213}
+[0m13:52:55.222525 [debug] [MainThread]: Command `dbt run` succeeded at 13:52:55.222489 after 3.24 seconds
+[0m13:52:55.222696 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb07f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c26df00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e373490>]}
+[0m13:52:55.222859 [debug] [MainThread]: Flushing usage events
+[0m13:52:55.546156 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:14.114990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10892bf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ef94e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ef9b70>]}
+
+
+============================== 14:02:14.117499 | 9079869a-82e6-4676-84e5-43958425521d ==============================
+[0m14:02:14.117499 [info ] [MainThread]: Running with dbt=1.11.0-rc1
+[0m14:02:14.117781 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'profiles_dir': '/Users/kyungsl/.dbt', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'empty': 'False', 'partial_parse': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'invocation_command': 'dbt run', 'target_path': 'None', 'use_colors': 'True', 'debug': 'False', 'static_parser': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'version_check': 'True', 'fail_fast': 'False', 'quiet': 'False', 'write_json': 'True', 'log_path': '/Users/kyungsl/workspace/dbt-projects/my_analytics_project/logs'}
+[0m14:02:14.119979 [info ] [MainThread]: target not specified in profile 'my_analytics_project', using 'default'
+[0m14:02:14.120219 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'my_analytics_project' does not have a target named 'default'. The valid target names for this profile are:
+   - dev
+[0m14:02:14.121365 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.040516626, "process_in_blocks": "0", "process_kernel_time": 0.079139, "process_mem_max_rss": "104693760", "process_out_blocks": "0", "process_user_time": 0.584085}
+[0m14:02:14.121598 [debug] [MainThread]: Command `dbt run` failed at 14:02:14.121551 after 0.04 seconds
+[0m14:02:14.121769 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10892bf70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ef8070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109efbdf0>]}
+[0m14:02:14.121953 [debug] [MainThread]: Flushing usage events
+[0m14:02:14.487708 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: coffee_shop_source  # This is the "nickname" you will use in dbt
+    database: WAREHOUSE_COFFEE_COMPANY # The actual Snowflake Database
+    schema: PUBLIC            # The actual Snowflake Schema
+    tables:
+      - name: ORDERS          # The actual Table Name
+      - name: TRANSACTIONS    # The actual Table Name

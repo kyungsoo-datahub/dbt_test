@@ -1,0 +1,1 @@
+{"_invocation_id": "7f0e273a-5c49-4cd7-afce-2c4e5f24830c", "linked": {"0": {"name": "source.my_analytics_project.coffee_shop_source.ORDERS", "type": "source", "succ": [2]}, "1": {"name": "source.my_analytics_project.coffee_shop_source.TRANSACTIONS", "type": "source", "succ": [2]}, "2": {"name": "model.my_analytics_project.sales_analytics", "type": "model"}}}
