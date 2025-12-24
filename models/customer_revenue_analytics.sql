@@ -21,7 +21,7 @@ FACTS (
         COMMENT='ORDER_TOTAL fact from sales_analytics semantic view',
 
     SalesView.TRANSACTION_AMOUNT AS SV_TRANSACTION_AMOUNT
-        COMMENT='TRANSACTION_AMOUNT fact from sales_analytics semantic view',
+        COMMENT='TRANSACTION_AMOUNT fact from sales_analytics semantic view'
 
 )
 
