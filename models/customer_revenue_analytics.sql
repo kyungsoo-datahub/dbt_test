@@ -14,16 +14,6 @@ TABLES (
         PRIMARY KEY (ORDER_ID)
 )
 
-DIMENSIONS (
-    -- From semantic view
-    SalesView.CUSTOMER_ID AS SV_CUSTOMER_ID
-        COMMENT='CUSTOMER_ID dimension from sales_analytics semantic view',
-
-    -- From source table
-    O.ORDER_ID AS RAW_ORDER_ID
-        COMMENT='ORDER_ID directly from ORDERS source table'
-)
-
 METRICS (
     -- Test: Reference a metric defined in the semantic view
     SalesView.GROSS_REVENUE AS SV_GROSS_REVENUE
