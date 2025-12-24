@@ -7,7 +7,7 @@
 
 TABLES (
     -- Reference the existing semantic view
-    {{ ref('SALES_ANALYTICS') }},
+    {{ ref('sales_analytics') }},
 
     -- Explicitly include the raw TRANSACTIONS source table again, giving it an alias 'T'
     {{ source('coffee_shop_source', 'TRANSACTIONS') }} AS T
