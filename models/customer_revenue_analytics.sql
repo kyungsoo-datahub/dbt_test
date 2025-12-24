@@ -1,5 +1,5 @@
--- Semantic view combining: regular view (from sales_analytics logic) + ORDERS table
--- Demonstrates using pre-computed metrics from a view + raw table columns
+-- Semantic view combining: materialized semantic view + raw table
+-- Pattern: semantic view -> SEMANTIC_VIEW() function -> regular view -> new semantic view
 
 {{ config(
     materialized='semantic_view',
@@ -7,7 +7,7 @@
 ) }}
 
 TABLES (
-    -- Reference the materialized view (contains TOTAL_ORDER_REVENUE_RAW)
+    -- Reference the materialized view (from sales_analytics semantic view)
     SalesView AS {{ ref('sales_analytics_view') }}
         PRIMARY KEY (ORDER_ID),
 
@@ -17,15 +17,17 @@ TABLES (
 )
 
 RELATIONSHIPS (
-    -- Join the view with the orders table on ORDER_ID
     SALES_ORDER_LINK AS SalesView(ORDER_ID)
         REFERENCES O(ORDER_ID)
 )
 
 FACTS (
-    -- From the view (pre-computed total order revenue) - column name matches alias
+    -- From materialized semantic view (TOTAL_ORDER_REVENUE metric is now a column)
     SalesView.TOTAL_ORDER_REVENUE AS TOTAL_ORDER_REVENUE
-        COMMENT='Pre-computed total order revenue from sales analytics view',
+        COMMENT='Total order revenue from sales_analytics semantic view',
+
+    SalesView.GROSS_REVENUE AS GROSS_REVENUE
+        COMMENT='Gross revenue from sales_analytics semantic view',
 
     -- From raw orders table
     O.ORDER_TOTAL AS ORDER_TOTAL
@@ -33,30 +35,28 @@ FACTS (
 )
 
 DIMENSIONS (
-    -- From the view
     SalesView.CUSTOMER_ID AS CUSTOMER_ID
-        COMMENT='Customer ID from sales analytics view',
+        COMMENT='Customer ID from sales_analytics',
 
     SalesView.ORDER_TYPE AS ORDER_TYPE
-        COMMENT='Order type from sales analytics view',
+        COMMENT='Order type from sales_analytics',
 
-    -- From raw orders table
     O.STORE_ID AS STORE_ID
         COMMENT='Store ID from ORDERS table'
 )
 
 METRICS (
-    -- Table-scoped metric from view (must use TableAlias.MetricName syntax)
-    SalesView.TOTAL_REVENUE AS SUM(TOTAL_ORDER_REVENUE)
-        COMMENT='Sum of total order revenue from view',
+    -- Metric using materialized semantic view metric (now a fact)
+    SalesView.TOTAL_REVENUE_SUM AS SUM(TOTAL_ORDER_REVENUE)
+        COMMENT='Sum of total order revenue from materialized semantic view',
 
-    -- Table-scoped metric from raw table
+    -- Metric from raw table
     O.RAW_REVENUE AS SUM(ORDER_TOTAL)
         COMMENT='Sum of order totals from raw ORDERS table',
 
-    -- Derived metric: combines table-scoped metrics (not facts)
-    COMBINED_REVENUE AS SalesView.TOTAL_REVENUE + O.RAW_REVENUE
-        COMMENT='Combined metric using view metric + raw table metric'
+    -- Combined metric: semantic view metric + raw table metric
+    COMBINED_REVENUE AS SalesView.TOTAL_REVENUE_SUM + O.RAW_REVENUE
+        COMMENT='Combined: materialized semantic view metric + raw table metric'
 )
 
-COMMENT='Semantic view combining sales analytics view with raw ORDERS table'
+COMMENT='Semantic view chaining: sales_analytics -> materialized view -> new semantic view + ORDERS table'
