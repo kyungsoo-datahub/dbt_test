@@ -14,17 +14,6 @@ TABLES (
         PRIMARY KEY (ORDER_ID)
 )
 
--- Test: Try to access semantic view's exposed columns
-FACTS (
-    -- From semantic view
-    SalesView.ORDER_TOTAL AS SV_ORDER_TOTAL
-        COMMENT='ORDER_TOTAL fact from sales_analytics semantic view',
-
-    SalesView.TRANSACTION_AMOUNT AS SV_TRANSACTION_AMOUNT
-        COMMENT='TRANSACTION_AMOUNT fact from sales_analytics semantic view'
-
-)
-
 DIMENSIONS (
     -- From semantic view
     SalesView.CUSTOMER_ID AS SV_CUSTOMER_ID
