@@ -8,7 +8,7 @@
 
 TABLES (
     -- Reference the materialized view (from sales_analytics semantic view)
-    SalesView AS {{ ref('sales_analytics_view') }}
+    SalesView AS {{ ref('sales_analytics_materialized') }}
         PRIMARY KEY (ORDER_ID),
 
     -- Reference raw ORDERS table for additional columns

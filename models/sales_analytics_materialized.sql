@@ -3,7 +3,7 @@
 
 {{ config(
     materialized='view',
-    alias='SALES_ANALYTICS_VIEW'
+    alias='SALES_ANALYTICS_MATERIALIZED'
 ) }}
 
 SELECT * FROM SEMANTIC_VIEW(
