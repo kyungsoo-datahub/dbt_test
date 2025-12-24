@@ -5,43 +5,39 @@
     alias='CUSTOMER_REVENUE_ANALYTICS'
 ) }}
 
--- This semantic view "chains" on top of another semantic view (SALES_ANALYTICS)
--- and a raw source table (CUSTOMERS) to create more complex, layered metrics.
-
 TABLES (
-    -- Reference your existing semantic view using ref()
+    -- Reference the existing semantic view
     {{ ref('SALES_ANALYTICS') }},
 
-    -- Reference the raw customers table using source()
-    {{ source('coffee_shop_source', 'CUSTOMERS') }}
+    -- Explicitly include the raw TRANSACTIONS source table again, giving it an alias 'T'
+    {{ source('coffee_shop_source', 'TRANSACTIONS') }} AS T
 )
 
 RELATIONSHIPS (
-    -- Define the join key between the two tables
-    SALES_ANALYTICS(CUSTOMER_ID) REFERENCES CUSTOMERS(CUSTOMER_ID)
+    -- Define how the SALES_ANALYTICS view joins back to the raw TRANSACTIONS table
+    -- We'll use ORDER_ID as the join key.
+    SALES_ANALYTICS(ORDER_ID) REFERENCES T(ORDER_ID)
 )
 
--- Expose underlying columns as facts and dimensions to make them available for metrics
+-- Expose columns from both upstream sources
 FACTS (
-    -- This fact comes from the upstream SALES_ANALYTICS semantic view
-    SALES_ANALYTICS.TOTAL_ORDER_REVENUE
+    -- This fact comes from the SALES_ANALYTICS semantic view
+    SALES_ANALYTICS.ORDER_TOTAL,
+
+    -- This fact comes directly from the newly joined TRANSACTIONS table (aliased as T)
+    T.TRANSACTION_AMOUNT
 )
 
 DIMENSIONS (
-    -- These dimensions come from the CUSTOMERS source table
-    CUSTOMERS.COUNTRY,
-    CUSTOMERS.LOYALTY_TIER
+    -- This dimension comes from the newly joined TRANSACTIONS table
+    T.PAYMENT_METHOD
 )
 
 METRICS (
-    -- Define a new, chained metric that uses data from both upstream tables.
-    -- This metric calculates a customer's revenue adjusted for their loyalty status.
-    LOYALTY_ADJUSTED_REVENUE AS
-        CASE
-            WHEN CUSTOMERS.LOYALTY_TIER = 'GOLD' THEN SALES_ANALYTICS.TOTAL_ORDER_REVENUE * 0.9
-            ELSE SALES_ANALYTICS.TOTAL_ORDER_REVENUE
-        END
-        COMMENT='Total order revenue adjusted for customer loyalty discounts.'
+    -- This metric explicitly combines a column from the SALES_ANALYTICS view
+    -- with a column from the directly-joined TRANSACTIONS table.
+    REVENUE_TO_TRANSACTION_RATIO AS SUM(SALES_ANALYTICS.ORDER_TOTAL) / NULLIF(SUM(T.TRANSACTION_AMOUNT), 0)
+        COMMENT='The ratio of total order revenue from the sales view to the total transaction amount from the raw transactions table.'
 )
 
-COMMENT='A chained semantic view that combines sales analytics with customer loyalty data.'
+COMMENT='A semantic view that explicitly joins an existing view with a source table.'
