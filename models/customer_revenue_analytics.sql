@@ -1,4 +1,4 @@
--- models/customer_revenue_analytics.sql
+-- Test: combining semantic view columns/metrics with source table columns
 
 {{ config(
     materialized='semantic_view',
@@ -9,45 +9,47 @@ TABLES (
     -- Reference the existing semantic view
     SalesView AS {{ ref('sales_analytics') }},
 
-    -- Explicitly include the raw TRANSACTIONS source table again, giving it an alias 'T'
-    T AS {{ source('coffee_shop_source', 'TRANSACTIONS') }}
-        PRIMARY KEY (TRANSACTION_ID),
-
-    -- Include the ORDERS source table for direct access to ORDER_TOTAL
+    -- Include a source table
     O AS {{ source('coffee_shop_source', 'ORDERS') }}
         PRIMARY KEY (ORDER_ID)
 )
 
-RELATIONSHIPS (
-    -- Define how the SALES_ANALYTICS view joins back to the raw TRANSACTIONS table
-    SALES_TO_TRANSACTIONS AS SalesView(ORDER_ID) REFERENCES T(ORDER_ID),
-
-    -- Link ORDERS to TRANSACTIONS via ORDER_ID
-    ORDERS_TO_TRANSACTIONS AS O(ORDER_ID) REFERENCES T(ORDER_ID)
-)
-
--- Expose columns from both upstream sources
+-- Test: Try to access semantic view's exposed columns
 FACTS (
-    -- This fact comes from the ORDERS source table
-    O.ORDER_TOTAL AS ORDER_TOTAL
-        COMMENT='Total order amount from the orders table',
+    -- From semantic view
+    SalesView.ORDER_TOTAL AS SV_ORDER_TOTAL
+        COMMENT='ORDER_TOTAL fact from sales_analytics semantic view',
 
-    -- This fact comes directly from the newly joined TRANSACTIONS table (aliased as T)
-    T.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT
-        COMMENT='Transaction amount from the raw transactions table'
+    SalesView.TRANSACTION_AMOUNT AS SV_TRANSACTION_AMOUNT
+        COMMENT='TRANSACTION_AMOUNT fact from sales_analytics semantic view',
+
+    -- From source table
+    O.ORDER_TOTAL AS RAW_ORDER_TOTAL
+        COMMENT='ORDER_TOTAL directly from ORDERS source table'
 )
 
 DIMENSIONS (
-    -- This dimension comes from the newly joined TRANSACTIONS table
-    T.PAYMENT_METHOD AS PAYMENT_METHOD
-        COMMENT='Payment method from the raw transactions table'
+    -- From semantic view
+    SalesView.CUSTOMER_ID AS SV_CUSTOMER_ID
+        COMMENT='CUSTOMER_ID dimension from sales_analytics semantic view',
+
+    -- From source table
+    O.CUSTOMER_ID AS RAW_CUSTOMER_ID
+        COMMENT='CUSTOMER_ID directly from ORDERS source table'
 )
 
 METRICS (
-    -- This metric explicitly combines a column from the SALES_ANALYTICS view
-    -- with a column from the directly-joined TRANSACTIONS table.
-    REVENUE_TO_TRANSACTION_RATIO AS SUM(ORDER_TOTAL) / NULLIF(SUM(TRANSACTION_AMOUNT), 0)
-        COMMENT='The ratio of total order revenue from the sales view to the total transaction amount from the raw transactions table.'
+    -- Test: Reference a metric defined in the semantic view
+    SalesView.GROSS_REVENUE AS SV_GROSS_REVENUE
+        COMMENT='GROSS_REVENUE metric from sales_analytics semantic view',
+
+    -- Test: Create new metric from source table
+    RAW_TOTAL_REVENUE AS SUM(RAW_ORDER_TOTAL)
+        COMMENT='New metric from source table',
+
+    -- Test: Combine semantic view metric with source table metric
+    COMBINED_METRIC AS SalesView.GROSS_REVENUE + SUM(RAW_ORDER_TOTAL)
+        COMMENT='Combining semantic view metric with source table aggregation'
 )
 
-COMMENT='A semantic view that explicitly joins an existing view with a source table.'
+COMMENT='Test: semantic view + source table column/metric access'
