@@ -23,9 +23,6 @@ FACTS (
     SalesView.TRANSACTION_AMOUNT AS SV_TRANSACTION_AMOUNT
         COMMENT='TRANSACTION_AMOUNT fact from sales_analytics semantic view',
 
-    -- From source table
-    O.ORDER_TOTAL AS RAW_ORDER_TOTAL
-        COMMENT='ORDER_TOTAL directly from ORDERS source table'
 )
 
 DIMENSIONS (
