@@ -9,5 +9,5 @@
 SELECT * FROM SEMANTIC_VIEW(
     {{ ref('sales_analytics') }}
     DIMENSIONS OrdersTable.CUSTOMER_ID, OrdersTable.ORDER_ID, OrdersTable.ORDER_TYPE, OrdersTable.STORE_ID
-    METRICS OrdersTable.GROSS_REVENUE, TransactionsTable.NET_PAYMENT_AMOUNT, TOTAL_ORDER_REVENUE
+    METRICS OrdersTable.GROSS_REVENUE
 )

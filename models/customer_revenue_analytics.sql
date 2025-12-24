@@ -22,10 +22,7 @@ RELATIONSHIPS (
 )
 
 FACTS (
-    -- From materialized semantic view (TOTAL_ORDER_REVENUE metric is now a column)
-    SalesView.TOTAL_ORDER_REVENUE AS TOTAL_ORDER_REVENUE
-        COMMENT='Total order revenue from sales_analytics semantic view',
-
+    -- From materialized semantic view (GROSS_REVENUE metric is now a column)
     SalesView.GROSS_REVENUE AS GROSS_REVENUE
         COMMENT='Gross revenue from sales_analytics semantic view',
 
@@ -47,15 +44,15 @@ DIMENSIONS (
 
 METRICS (
     -- Metric using materialized semantic view metric (now a fact)
-    SalesView.TOTAL_REVENUE_SUM AS SUM(TOTAL_ORDER_REVENUE)
-        COMMENT='Sum of total order revenue from materialized semantic view',
+    SalesView.GROSS_REVENUE_SUM AS SUM(GROSS_REVENUE)
+        COMMENT='Sum of gross revenue from materialized semantic view',
 
     -- Metric from raw table
     O.RAW_REVENUE AS SUM(ORDER_TOTAL)
         COMMENT='Sum of order totals from raw ORDERS table',
 
     -- Combined metric: semantic view metric + raw table metric
-    COMBINED_REVENUE AS SalesView.TOTAL_REVENUE_SUM + O.RAW_REVENUE
+    COMBINED_REVENUE AS SalesView.GROSS_REVENUE_SUM + O.RAW_REVENUE
         COMMENT='Combined: materialized semantic view metric + raw table metric'
 )
 
