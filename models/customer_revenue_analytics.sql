@@ -34,8 +34,8 @@ DIMENSIONS (
         COMMENT='CUSTOMER_ID dimension from sales_analytics semantic view',
 
     -- From source table
-    O.CUSTOMER_ID AS RAW_CUSTOMER_ID
-        COMMENT='CUSTOMER_ID directly from ORDERS source table'
+    O.ORDER_ID AS RAW_ORDER_ID
+        COMMENT='ORDER_ID directly from ORDERS source table'
 )
 
 METRICS (
