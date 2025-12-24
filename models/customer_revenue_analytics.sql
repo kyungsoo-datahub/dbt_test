@@ -46,17 +46,17 @@ DIMENSIONS (
 )
 
 METRICS (
-    -- Metric using FACT from view
-    TOTAL_REVENUE AS SUM(TOTAL_ORDER_REVENUE)
+    -- Table-scoped metric from view (must use TableAlias.MetricName syntax)
+    SalesView.TOTAL_REVENUE AS SUM(TOTAL_ORDER_REVENUE)
         COMMENT='Sum of total order revenue from view',
 
-    -- Metric using FACT from raw table
-    RAW_REVENUE AS SUM(RAW_ORDER_TOTAL)
+    -- Table-scoped metric from raw table
+    O.RAW_REVENUE AS SUM(RAW_ORDER_TOTAL)
         COMMENT='Sum of order totals from raw ORDERS table',
 
-    -- Combined metric: TOTAL_ORDER_REVENUE + RAW_ORDER_TOTAL
-    COMBINED_REVENUE AS SUM(TOTAL_ORDER_REVENUE) + SUM(RAW_ORDER_TOTAL)
-        COMMENT='Combined metric using view fact + raw table fact'
+    -- Derived metric: combines table-scoped metrics (not facts)
+    COMBINED_REVENUE AS SalesView.TOTAL_REVENUE + O.RAW_REVENUE
+        COMMENT='Combined metric using view metric + raw table metric'
 )
 
 COMMENT='Semantic view combining sales analytics view with raw ORDERS table'
