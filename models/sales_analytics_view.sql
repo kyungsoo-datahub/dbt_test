@@ -23,7 +23,7 @@ SELECT
 
     -- Pre-computed: TOTAL_ORDER_REVENUE = ORDER_TOTAL + TRANSACTION_AMOUNT
     -- (At row level, actual aggregation happens in semantic view)
-    o.ORDER_TOTAL + COALESCE(t.TRANSACTION_AMOUNT, 0) AS TOTAL_ORDER_REVENUE_RAW
+    o.ORDER_TOTAL + COALESCE(t.TRANSACTION_AMOUNT, 0) AS TOTAL_ORDER_REVENUE
 
 FROM {{ source('coffee_shop_source', 'ORDERS') }} o
 LEFT JOIN {{ source('coffee_shop_source', 'TRANSACTIONS') }} t

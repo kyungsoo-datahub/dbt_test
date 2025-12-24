@@ -23,12 +23,12 @@ RELATIONSHIPS (
 )
 
 FACTS (
-    -- From the view (pre-computed total order revenue)
-    SalesView.TOTAL_ORDER_REVENUE_RAW AS TOTAL_ORDER_REVENUE
+    -- From the view (pre-computed total order revenue) - column name matches alias
+    SalesView.TOTAL_ORDER_REVENUE AS TOTAL_ORDER_REVENUE
         COMMENT='Pre-computed total order revenue from sales analytics view',
 
     -- From raw orders table
-    O.ORDER_TOTAL AS RAW_ORDER_TOTAL
+    O.ORDER_TOTAL AS ORDER_TOTAL
         COMMENT='Order total directly from ORDERS table'
 )
 
@@ -51,7 +51,7 @@ METRICS (
         COMMENT='Sum of total order revenue from view',
 
     -- Table-scoped metric from raw table
-    O.RAW_REVENUE AS SUM(RAW_ORDER_TOTAL)
+    O.RAW_REVENUE AS SUM(ORDER_TOTAL)
         COMMENT='Sum of order totals from raw ORDERS table',
 
     -- Derived metric: combines table-scoped metrics (not facts)
