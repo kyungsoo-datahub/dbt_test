@@ -11,20 +11,26 @@ TABLES (
 
     -- Explicitly include the raw TRANSACTIONS source table again, giving it an alias 'T'
     T AS {{ source('coffee_shop_source', 'TRANSACTIONS') }}
-        PRIMARY KEY (TRANSACTION_ID)
+        PRIMARY KEY (TRANSACTION_ID),
+
+    -- Include the ORDERS source table for direct access to ORDER_TOTAL
+    O AS {{ source('coffee_shop_source', 'ORDERS') }}
+        PRIMARY KEY (ORDER_ID)
 )
 
 RELATIONSHIPS (
     -- Define how the SALES_ANALYTICS view joins back to the raw TRANSACTIONS table
-    -- We'll use ORDER_ID as the join key.
-    SALES_TO_TRANSACTIONS AS SalesView(ORDER_ID) REFERENCES T(ORDER_ID)
+    SALES_TO_TRANSACTIONS AS SalesView(ORDER_ID) REFERENCES T(ORDER_ID),
+
+    -- Link ORDERS to TRANSACTIONS via ORDER_ID
+    ORDERS_TO_TRANSACTIONS AS O(ORDER_ID) REFERENCES T(ORDER_ID)
 )
 
 -- Expose columns from both upstream sources
 FACTS (
-    -- This fact comes from the SALES_ANALYTICS semantic view
-    SalesView.ORDER_TOTAL AS ORDER_TOTAL
-        COMMENT='Total order amount from the sales analytics view',
+    -- This fact comes from the ORDERS source table
+    O.ORDER_TOTAL AS ORDER_TOTAL
+        COMMENT='Total order amount from the orders table',
 
     -- This fact comes directly from the newly joined TRANSACTIONS table (aliased as T)
     T.TRANSACTION_AMOUNT AS TRANSACTION_AMOUNT
