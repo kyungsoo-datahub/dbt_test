@@ -44,11 +44,11 @@ METRICS (
         COMMENT='GROSS_REVENUE metric from sales_analytics semantic view',
 
     -- Test: Create new metric from source table
-    RAW_TOTAL_REVENUE AS SUM(RAW_ORDER_TOTAL)
+    RAW_TOTAL_REVENUE AS SUM(O.ORDER_TOTAL)
         COMMENT='New metric from source table',
 
     -- Test: Combine semantic view metric with source table metric
-    COMBINED_METRIC AS SalesView.GROSS_REVENUE + SUM(RAW_ORDER_TOTAL)
+    COMBINED_METRIC AS SalesView.GROSS_REVENUE + SUM(O.ORDER_TOTAL)
         COMMENT='Combining semantic view metric with source table aggregation'
 )
 
