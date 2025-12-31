@@ -1,6 +1,6 @@
 {{ config(
     materialized='semantic_view',
-    alias='SALES_ANALYTICS'
+    alias='SALES_ANALYTICS_TEST'
 ) }}
 
 TABLES (
