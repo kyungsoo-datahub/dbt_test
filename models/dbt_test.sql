@@ -1,6 +1,6 @@
 {{ config(
     materialized='semantic_view',
-    alias='SALES_ANALYTICS_MERGED'
+    alias='DBT_TEST'
 ) }}
 
 TABLES (
